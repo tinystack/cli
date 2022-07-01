@@ -140,7 +140,7 @@ func (app *App) parseFlag(cmd *command, args []string) (*flag.FlagSet, error) {
 		}
 	}
 	if err := flagSet.Parse(args); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("cli: flagSet.Parse err: %s", err.Error())
 	}
 	return flagSet, nil
 }
